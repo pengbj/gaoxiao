@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>自助请销假系统</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script language="JavaScript"   type="text/JavaScript">
+           function check(){
+            if(document.login.username.value==""){
+                var  msg=document.getElementById("msg1");
+               msg.innerHTML="账户不可为空";
+               return false;
+            }
+            if(document.login.password.value==""){
+                  var  msg=document.getElementById("msg2");
+               msg.innerHTML="密码不可为空";
+               return false;
+            }
+            else if(document.login.kind.value==""){
+                 var  msg=document.getElementById("msg3");
+               msg.innerHTML="账户类型不可为空";
+               return false;
+            } 
+            else{
+                 document.login.submit();
+            }
+           } 
+        </script>
+    </head>
+    <body>
+        <form  name="login"  action="login" method="POST" onsubmit="return check()">
+        账号：<input type="text" name="username"  /><span id="msg1"></span><br>
+        密码：<input type="text" name="password"  /><span id="msg2"></span><br>
+        账户类型：<input type="radio" name="kind" value="stu" />学生&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="kind" value="adm" />管理员&nbsp;&nbsp;&nbsp;<br>
+        <input type="radio" name="kind" value="tea" />老师&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="kind" value="ass" />辅导员&nbsp;&nbsp;&nbsp;<span id="msg3"></span><br>
+        <input type="submit" value="登录"  />
+        </form>
+        </body>
+</html>
